@@ -47,13 +47,28 @@ function App() {
           <div className="container">
             <div className="grid grid-cols-4 gap-4 px-20 mt-12">
               {data.map((country) => (
-              <div className="nation" key={country.name.common}>
-                <img src={country.flags.svg} alt={country.name.common} />
-                <div className="description">
-                  <h1 className="font-bold text-xl">{country.name.official}</h1>
-                  <p>Population: {country.population}</p>
-                  <p>Region: {country.region}</p>
-                  <p>Capital: {country.capital}</p>
+              <div key={country.name.common} className="w-72 max-h-96 mb-12">
+                <img 
+                  src={country.flags.svg} 
+                  alt={country.name.common} 
+                  className="w-ful object-cover rounded-t-lg"
+                />
+                <div className="description bg-white shadow-lg p-8">
+                  <h1 className="font-bold text-xl pb-5">
+                    {country.name.official}
+                  </h1>
+                  <p> 
+                    <span className='font-semibold pr-3'>Population:</span> 
+                      {country.population}
+                    </p>
+                  <p>
+                    <span className='font-semibold pr-3'>Region:</span> 
+                      {country.region}
+                    </p>
+                  <p>
+                    <span className='font-semibold pr-3'>Capital:</span> 
+                    {country.capital}
+                  </p>
                 </div>
               </div>
               ))}
