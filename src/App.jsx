@@ -7,10 +7,12 @@ import Navbar from './components/Navbar'
 
 function App() {
 
-  const { data: countries, error } = useSWR('https://restcountries.com/v3.1/all');
+  const fetcher = (...args) => fetch(...args).then(res => res.json())
+
+  const { data, error } = useSWR(' https://restcountries.com/v3.1/all', fetcher);
 
   if (error) return <div>Error fetching data</div>;
-  if (!countries) return <div>Loading...</div>;
+  if (!data) return <div>Loading...</div>;
 
 
   return (
@@ -44,11 +46,11 @@ function App() {
 
           <div className="container">
             <div className="grid grid-cols-4 gap-4 px-20 mt-12">
-              {countries.map((country) => (
-              <div className="nation">
-                <img src={country.flags.png} alt="country.name.common" />
-                <div className="descrip">
-                  <h1 className="font-bold text-xl">Nigeria</h1>
+              {data.map((country) => (
+              <div className="nation" key={country.name.common}>
+                <img src={country.flags.svg} alt={country.name.common} />
+                <div className="description">
+                  <h1 className="font-bold text-xl">{country.name.official}</h1>
                   <p>Population: {country.population}</p>
                   <p>Region: {country.region}</p>
                   <p>Capital: {country.capital}</p>
