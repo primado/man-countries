@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react'
 import { IoSearchOutline } from "react-icons/io5";
 import { Listbox, Transition } from '@headlessui/react'
 import { IoChevronDownSharp, IoCheckmarkSharp } from "react-icons/io5";
+import { Link, Route, Switch, useParams, useRouteMatch } from "react-router-dom";
 import useSWR from 'swr'
 
 
@@ -149,30 +150,32 @@ const searchedCountries =
           <div className="container">
             <div className="grid grid-cols-4 gap-4 px-20 mt-12">
               {searchedCountries.map((country) => (
-              <div key={country.name.common} className="w-72 max-h-96 mb-12">
-                <img 
-                  src={country.flags.svg} 
-                  alt={country.name.common} 
-                  className="w-ful object-cover rounded-t-lg"
-                />
-                <div className="description bg-white shadow-lg p-8">
-                  <h1 className="font-bold text-xl pb-5">
-                    {country.name}
-                  </h1>
-                  <p> 
-                    <span className='font-semibold pr-3'>Population:</span> 
-                      {country.population}
+              <Link to={`/country/${country.alpha3Code}`}>
+                <div key={country.name.common} className="w-72 max-h-96 mb-12">
+                  <img 
+                    src={country.flags.svg} 
+                    alt={country.name.common} 
+                    className="w-ful object-cover rounded-t-lg"
+                  />
+                  <div className="description bg-white shadow-lg p-8">
+                    <h1 className="font-bold text-xl pb-5">
+                      {country.name}
+                    </h1>
+                    <p> 
+                      <span className='font-semibold pr-3'>Population:</span> 
+                        {country.population}
+                      </p>
+                    <p>
+                      <span className='font-semibold pr-3'>Region:</span> 
+                        {country.region}
+                      </p>
+                    <p>
+                      <span className='font-semibold pr-3'>Capital:</span> 
+                      {country.capital}
                     </p>
-                  <p>
-                    <span className='font-semibold pr-3'>Region:</span> 
-                      {country.region}
-                    </p>
-                  <p>
-                    <span className='font-semibold pr-3'>Capital:</span> 
-                    {country.capital}
-                  </p>
+                  </div>
                 </div>
-              </div>
+              </Link>
               ))}
 
             </div>
