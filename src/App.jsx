@@ -2,7 +2,8 @@ import { Fragment, useState } from 'react'
 import { IoSearchOutline } from "react-icons/io5";
 import { Listbox, Transition } from '@headlessui/react'
 import { IoChevronDownSharp, IoCheckmarkSharp } from "react-icons/io5";
-import { Link, Route, Switch, useParams, useRouteMatch } from "react-router-dom";
+import { Link  } from "react-router-dom";
+// Route, Switch, useParams, useRouteMatch
 import useSWR from 'swr'
 
 
