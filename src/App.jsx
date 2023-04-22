@@ -59,7 +59,7 @@ const searchedCountries =
 
 
   return (
-    <div className="App font-nunito bg-slate-600">
+    <div className="App font-nunito">
       <div>
         <Navbar />
 
@@ -148,7 +148,7 @@ const searchedCountries =
 
         <div className="countries ">
 
-          <div className="container  border-2 border-red-600 ">
+          <div className="container">
             <div className="grid grid-cols-4 gap-x-28 gap-y-16 px-12 mt-12 xl-1024:grid xl-1024:grid-cols-3 xl-1024:gap-x-16 2md:grid 2md:grid-cols-2 sm-425:grid sm-425:grid-cols-1 sm-425:gap-x-0 sm-320:px-3 sm-375:px-2 sm-470:grid sm-470:grid-cols-1 sm-470:gap-x-0">
               {searchedCountries.map((country) => (
               <Link to={`/country/${country.alpha3Code}`}>
