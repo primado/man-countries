@@ -59,12 +59,12 @@ const searchedCountries =
 
 
   return (
-    <div className="App font-nunito">
+    <div className="App font-nunito bg-slate-600">
       <div>
         <Navbar />
 
         <div className="mt-12">
-          <form action="#" className='flex justify-between px-20'>
+          <form action="#" className='flex justify-between px-20 sm-425:px-5 sm-375:flex sm-375:flex-col sm-375:gap-y-5 sm-470:flex sm-470:justify-between sm-470:px-5'>
             <div className="form__group w-96">
               
               <div className="relative">  
@@ -72,7 +72,7 @@ const searchedCountries =
                   <IoSearchOutline className="text-gray-700 text-xl font-bold" />
                 </div>
                 <input 
-                  className="w-full h-12 px-16 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  className="w-full h-12 px-16 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent sm-425:w-56 sm-375:w-60 sm-470:w-56"
                   type="text" 
                   placeholder="Search for a country..." 
                   value={searchTerm}
@@ -83,7 +83,7 @@ const searchedCountries =
               </div>
               
             </div>
-            <div className=" right-16 w-52 ">
+            <div className="right-16 w-52 sm-375:w-60">
               <Listbox value={region} onChange={setRegion}>
                 <div className='relative mt-1'>
                   <Listbox.Button className='relative w-full mb-1 flex items-center bg-white shadow-lg cursor-default rounded-lg py-2 pl-5 h-12 text-left border-2 border-gray-100 focus:outline-none focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2'>
@@ -146,19 +146,19 @@ const searchedCountries =
           </form>
         </div>
 
-        <div className="countries">
+        <div className="countries ">
 
-          <div className="container">
-            <div className="grid grid-cols-4 gap-4 px-20 mt-12">
+          <div className="container  border-2 border-red-600 ">
+            <div className="grid grid-cols-4 gap-x-28 gap-y-16 px-12 mt-12 xl-1024:grid xl-1024:grid-cols-3 xl-1024:gap-x-16 2md:grid 2md:grid-cols-2 sm-425:grid sm-425:grid-cols-1 sm-425:gap-x-0 sm-320:px-3 sm-375:px-2 sm-470:grid sm-470:grid-cols-1 sm-470:gap-x-0">
               {searchedCountries.map((country) => (
               <Link to={`/country/${country.alpha3Code}`}>
-                <div key={country.name.common} className="w-72 max-h-96 mb-12">
+                <div key={country.name.common} className="w-72  ">
                   <img 
                     src={country.flags.svg} 
                     alt={country.name.common} 
                     className="w-ful object-cover rounded-t-lg"
                   />
-                  <div className="description bg-white shadow-lg p-8">
+                  <div className="description bg-white shadow-lg p-8 ">
                     <h1 className="font-bold text-xl pb-5">
                       {country.name}
                     </h1>
