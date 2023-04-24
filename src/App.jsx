@@ -8,7 +8,7 @@ import useSWR from 'swr'
 
 
 import Navbar from './components/Navbar'
-
+import Loader from './components/pageLoader'
 
 const regions = [
   {name: 'Filter by Region'},
@@ -43,7 +43,7 @@ function App() {
   );
 
   if (error) return <div>Error fetching data</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <Loader />;
 
   const filteredCountries =
   region.name === "all"
