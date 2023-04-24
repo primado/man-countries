@@ -9,6 +9,7 @@ import CountryDetails from './countryDetails'
 import App from './App'
 
 import './index.css'
+import Loader from "./components/pageLoader";
 
 
 
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     key: "home",
+    loader: Loader,
   },
 
   {
