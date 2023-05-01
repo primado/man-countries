@@ -1,4 +1,6 @@
 
+import "../../src/load.css";
+
 
 export default function Loader() {
 
