@@ -59,7 +59,7 @@ const searchedCountries =
 
 
   return (
-    <div className="App font-nunito">
+    <div className="App font-nunito dark:bg-[#202d36] dark:min-h-screen">
       <div>
         <Navbar />
 
@@ -69,10 +69,10 @@ const searchedCountries =
               
               <div className="relative">  
                 <div className="absolute top-0 left-0 mt-3 ml-5">
-                  <IoSearchOutline className="text-gray-700 text-xl font-bold" />
+                  <IoSearchOutline className="text-gray-700 text-xl font-bold dark:text-white" />
                 </div>
                 <input 
-                  className="w-full h-12 px-16 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent sm-425:w-56 sm-375:w-60 sm-470:w-56"
+                  className="w-full h-12 px-16 rounded-lg dark:bg-[#202d36] dark:text-white shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent sm-425:w-56 sm-375:w-60 sm-470:w-56"
                   type="text" 
                   placeholder="Search for a country..." 
                   value={searchTerm}
@@ -83,10 +83,10 @@ const searchedCountries =
               </div>
               
             </div>
-            <div className="right-16 w-52 sm-375:w-60">
+            <div className="right-16 w-52 sm-375:w-60 ">
               <Listbox value={region} onChange={setRegion}>
                 <div className='relative mt-1'>
-                  <Listbox.Button className='relative w-full mb-1 flex items-center bg-white shadow-lg cursor-default rounded-lg py-2 pl-5 h-12 text-left border-2 border-gray-100 focus:outline-none focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2'>
+                  <Listbox.Button className='relative w-full mb-1 flex items-center bg-white dark:bg-[#202d36] dark:text-white dark:border-none shadow-lg cursor-default rounded-lg py-2 pl-5 h-12 text-left border-2 border-gray-100 focus:outline-none focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2'>
                     <span className='block truncate'>
                       {region.name}
                     </span>
@@ -101,13 +101,13 @@ const searchedCountries =
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <Listbox.Options className='absolute shadow-md bg-white'>
+                    <Listbox.Options className='absolute shadow-md bg-white dark:bg-[#202d36]'>
                       {regions.map((region) => (
                         <Listbox.Option
                           key={region.name}
                           disabled={region.name === 'Filter by Region'}
                           className={({ active }) => `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                            active ? 'text-white bg-blue-600' : 'text-gray-900'
+                            active ? 'text-white dark:text-white bg-blue-600' : 'text-gray-900 dark:text-white'
                             }`
                           }
 
