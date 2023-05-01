@@ -59,7 +59,7 @@ const searchedCountries =
 
 
   return (
-    <div className="App font-nunito dark:bg-[#202d36] dark:min-h-screen">
+    <div className="App font-nunito dark:bg-[#202d36] dark:min-h-screen text-[14px]">
       <div>
         <Navbar />
 
