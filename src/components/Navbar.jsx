@@ -31,7 +31,7 @@ export default function Navbar() {
             document.documentElement.classList.add("dark");
         } else {
             localStorage.setItem("theme", JSON.stringify("light"));
-            setTheme("dark");
+            setTheme("light");
             document.documentElement.classList.remove("dark")
         }
     }
@@ -52,10 +52,16 @@ export default function Navbar() {
                         onClick={toggleTheme}
                         >
                         {theme === 'dark' ? (
-                            <IoSunnySharp className="w-6 h-6 dark:text-white"/>
+                            <div className="flex items-center gap-x-2">
+                            <IoSunnySharp className="w-6 h-6 dark:text-white"/> 
+                            <span className="dark:text-gray-300 font-semibold text-sm">Light Mode</span>
+                            </div>
                            )
                            : (
-                           <IoMoonOutline className="w-6 h-6"/>
+                            <div className="flex items-center gap-x-2">
+                                <IoMoonOutline className="w-6 h-6"/>
+                                <span className="dark:text-gray-300 font-semibold text-sm">Dark Mode</span>
+                            </div>
                            )}
                         </button>
                     </div>
