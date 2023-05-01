@@ -52,13 +52,13 @@ export default function Navbar() {
                         onClick={toggleTheme}
                         >
                         {theme === 'dark' ? (
-                            <div className="flex items-center gap-x-2">
-                            <IoSunnySharp className="w-6 h-6 dark:text-white"/> 
-                            <span className="dark:text-gray-300 font-semibold text-sm">Light Mode</span>
+                            <div className="flex items-center gap-x-2 animate-in slide-in-from-top spin-in-3 fade-in-50 duration-700 ease-in-out">
+                                <IoSunnySharp className="w-6 h-6 dark:text-white"/> 
+                                <span className="dark:text-gray-300 font-semibold text-sm">Light Mode</span>
                             </div>
                            )
                            : (
-                            <div className="flex items-center gap-x-2">
+                            <div className="flex items-center gap-x-2 animate-out slide-out-to-top spin-in-3 fade-in-50 duration-700 ease-in-out">
                                 <IoMoonOutline className="w-6 h-6"/>
                                 <span className="dark:text-gray-300 font-semibold text-sm">Dark Mode</span>
                             </div>
