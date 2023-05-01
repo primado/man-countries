@@ -56,7 +56,7 @@ Users should be able to:
 ### Built with
 
 - JSX
-- Tailwind CSS
+- [Tailwind CSS](https://tailwindcss.com/) - For styles
 - Flexbox
 - CSS Grid
 - Desktop-first workflow
