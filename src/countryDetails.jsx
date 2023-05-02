@@ -44,6 +44,7 @@ export default function CountryDetails() {
   
     return (
       <div>
+        <h1 className="font-semibold text-2xl text-red-500">Country detail view/page is temporarily not availablle. The Software Developer is working to resolve this issue. </h1>
         {name && name.common ? (
           <h1>{name.common}</h1>
         ) : (
