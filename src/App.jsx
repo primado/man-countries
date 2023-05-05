@@ -5,6 +5,8 @@ import { IoChevronDownSharp, IoCheckmarkSharp } from "react-icons/io5";
 import { Link  } from "react-router-dom";
 // Route, Switch, useParams, useRouteMatch
 import useSWR from 'swr'
+import ScrollToTop from 'react-scroll-to-top';
+import ScrollToTopBtn from './components/ScrollBtn';
 
 
 import Navbar from './components/Navbar'
@@ -62,7 +64,8 @@ const searchedCountries =
     <div className="App font-nunito dark:bg-[#202d36] dark:min-h-screen text-[14px]">
       <div>
         <Navbar />
-
+     
+        
         <div className="mt-12">
           <form action="#" className='flex justify-between px-20 sm-425:px-5 sm-375:flex sm-375:flex-col sm-375:gap-y-5 sm-470:flex sm-470:justify-between sm-470:px-5'>
             <div className="form__group w-96">
@@ -146,6 +149,11 @@ const searchedCountries =
           </form>
         </div>
 
+        <ScrollToTop 
+          smooth={true}
+          component={<ScrollToTopBtn/>}
+          width='50'
+        />
         <div className="countries ">
 
           <div className="container">
