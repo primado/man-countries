@@ -49,8 +49,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Deployed Site](https://man-countries.netlify.app/){:target="_blank}
-<!-- - Live Site URL: <a href="https://man-countries.netlify.app" target="_blank">Deployed Site</a> -->
+- Live Site URL: [Deployed Site](https://man-countries.netlify.app/)
 
 ## My process
 
