@@ -164,7 +164,7 @@ const searchedCountries =
                     </h1>
                     <p> 
                       <span className='font-semibold pr-3 dark:text-white'>Population:</span> 
-                        {country.population}
+                        {country.population.toLocaleString()}
                       </p>
                     <p>
                       <span className='font-semibold pr-3 dark:text-white'>Region:</span> 
