@@ -49,7 +49,8 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Deployed Site](https://man-countries.netlify.app/)
+<!-- - Live Site URL: [Deployed Site](https://man-countries.netlify.app/) -->
+- Live Site URL: <a href="https://man-countries.netlify.app" target="_blank">***Deployed Site***</a>
 
 ## My process
 
