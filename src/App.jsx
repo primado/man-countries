@@ -25,8 +25,8 @@ const regions = [
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const API_URL = 'https://restdata.com/v3.1/all';
-const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
+// const API_URL = 'https://restdata.com/v3.1/all';
+// const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
 
 
 function App() {
@@ -34,9 +34,6 @@ function App() {
   const [region, setRegion] = useState(regions[1])
   const [searchTerm, setSearchTerm] = useState("");
   
-
-  // const { data, error } = useSWR(CORS_PROXY + API_URL, fetcher);
-
 
 
   const { data, error } = useSWR(
@@ -61,7 +58,7 @@ const searchedCountries =
 
 
   return (
-    <div className="App font-nunito dark:bg-[#202d36] dark:min-h-screen text-[14px]">
+    <div className="App font-nunito dark:bg-[#202d36] dark:min-h-screen text-[14px] sm-320:w-screen sm-360:w-full sm-470:w-full">
       <div>
         <Navbar />
      
