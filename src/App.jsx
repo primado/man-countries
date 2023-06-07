@@ -37,7 +37,7 @@ function App() {
 
 
   const { data, error } = useSWR(
-    `https://restcountries.com/v2/all?fields=name,population,region,capital,flags`,
+    `https://restcountries.com/v2/all?fields=name,population,region,capital,flags,alpha2Code`,
     fetcher
   );
 
@@ -156,7 +156,7 @@ const searchedCountries =
           <div className="container">
             <div className="grid grid-cols-4 gap-x-28 gap-y-16 px-12 mt-12 xl-1024:grid xl-1024:grid-cols-3 xl-1024:gap-x-16 2md:grid 2md:grid-cols-2 sm-425:grid sm-425:grid-cols-1 sm-425:gap-x-0 sm-320:px-3 sm-375:px-2 sm-470:grid sm-470:grid-cols-1 sm-470:gap-x-0 md-943:grid md-943:grid-cols-2 md-950:grid md-950:grid-cols-2 xl-1080:grid xl-1080:xl-1024:grid-cols-3 xl-1080:gap-x-16">
               {searchedCountries.map((country) => (
-              <Link to={`/country/${country.alpha3Code}`}>
+              <Link to={`/country/${country.alpha2Code}`}>
                 <div key={country.name.common} className="w-72 dark:text-gray-400">
                   <img 
                     src={country.flags.svg} 

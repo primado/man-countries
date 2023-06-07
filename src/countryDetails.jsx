@@ -2,6 +2,8 @@ import React from "react"
 import { useParams } from "react-router-dom";
 import useSWR from "swr"
 
+import Loader from './components/pageLoader'
+
 
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -9,11 +11,11 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function CountryDetails() {
      
-    const { countryId } = useParams();
+    const { code } = useParams();
 
     // Fetch country data using SWR
     const { data: country, error } = useSWR(
-        `https://restcountries.com/v2/alpha/${countryId}`,
+        `https://restcountries.com/v2/alpha/${code}`,
       async (url) => {
         const response = await fetch(url);
         const data = await response.json();
@@ -26,7 +28,7 @@ export default function CountryDetails() {
     }
   
     if (!country) {
-      return <div>Loading...</div>;
+      return <Loader />;
     }
   
     const {
