@@ -9,17 +9,21 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function CountryDetails() {
      
-    const { countryId } = useParams();
+    const { code } = useParams();
+
+    console.log(code)
 
     // Fetch country data using SWR
     const { data: country, error } = useSWR(
-        `https://restcountries.com/v2/alpha/${countryId}`,
+        `https://restcountries.com/v2/alpha/${code}`,
       async (url) => {
         const response = await fetch(url);
         const data = await response.json();
         return data;
       }
     );
+
+    console.log(country)
   
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -104,8 +108,8 @@ export default function CountryDetails() {
           <div>
             <p>Border Countries:</p>
             <ul>
-              {borders.map((border) => (
-                <li key={border}>{border}</li>
+              {borders.map((border, index) => (
+                <li key={border+index}>{border}</li>
               ))}
             </ul>
           </div>
