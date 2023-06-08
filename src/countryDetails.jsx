@@ -53,7 +53,7 @@ export default function CountryDetails() {
    
   
     return (
-      <div className="dark:bg-very-dark-blue bg-white-mode min-h-screen md:h-screen">
+      <div className="dark:bg-very-dark-blue bg-white-mode min-h-screen">
 
         <div className="navbar">
           <Navbar />
@@ -68,15 +68,15 @@ export default function CountryDetails() {
             </button>
           </div>
 
-            <div className="container flex pt-12 gap-40">
+            <div className="container flex pt-12 gap-40 sm-425:gap-20 sm-425:flex-col sm-425:pb-20 2md:flex-col 2md:pb-20 2md:items-start 2md:gap-20 xl-1024:flex-col xl-1024:gap-20 xl-1024:pb-20 xl-1024:items-center">
 
-            <div className="flag">
-              <img 
-                src={country.flags.svg} 
-                alt={country.name} 
-                className="max-w-[34rem]"
-              />
-            </div>
+              <div className="flag">
+                <img 
+                  src={country.flags.svg} 
+                  alt={country.name} 
+                  className="shadow-2xl max-w-[34rem] sm-390:max-w-[17rem] sm-425:max-w-[20rem] sm-375:max-w-[17rem] sm-320:max-w-[12rem] md-540:max-w-[25rem] 2md:max-w-[35rem] xl-1024:max-w-[40rem]"
+                />
+              </div>
 
               
               <div className="details ">
@@ -97,7 +97,7 @@ export default function CountryDetails() {
 
                     </div>
 
-                    <div className="flex gap-20 mb-20 max-w-[40rem] ">
+                    <div className="flex gap-20 mb-10 max-w-[40rem] sm-425:flex-col sm-425:gap-10">
                       <div className="flex flex-col gap-2">
 
                         {/* // && nativeName.common */}
@@ -168,21 +168,21 @@ export default function CountryDetails() {
                           </span>
                         </p>
                       ) : (
-                        <p className="text-dark-blue font-medium text-base">Currencies: 
-                          <span className="text-base font-medium"> N/A </span> 
+                        <p className="text-dark-blue font-medium text-base dark:text-white-mode">Currencies: 
+                          <span className="text-base font-normal dark:text-dark-gray"> N/A </span> 
                         </p>
                       )}
                       {languages && Object.keys(languages).length > 0 ? (
                         <p className="text-dark-blue font-medium text-base dark:text-white-mode">
-                          Languages: <span className="text-base font-medium dark:text-dark-gray"> {" "}
+                          Languages: <span className="text-base font-normal dark:text-dark-gray"> {" "}
                           {Object.keys(languages)
                             .map((key) => `${key} (${languages[key].name})`)
                             .join(", ")}
                           </span>
                         </p>
                       ) : (
-                        <p className="text-dark-blue font-medium text-base">Languages: 
-                          <span> N/A</span>
+                        <p className="text-dark-blue font-medium text-base dark:text-white-mode">Languages: 
+                          <span className="text-base font-medium dark:text-dark-gray"> N/A</span>
                         </p>
                       )}
                     </div>
@@ -191,14 +191,15 @@ export default function CountryDetails() {
 
                 </div>
 
-                <div className=" max-w-[40rem]">
+                <div className="">
 
                   {borders && borders.length > 0 ? (
-                    <div className="flex gap-6">
+                    <div className="flex flex-row sm-425:flex-col sm-425:flex-wrap gap-6">
                       <p className="text-dark-blue font-medium text-base dark:text-white-mode">Border Countries:</p>
                       <ul className="flex gap-8 flex-wrap ">
                         {borders.map((border) => (
                           <Link to={`/country/${border}`}>
+                           
                           <li 
                             className="flex justify-center items-center font-normal dark:text-dark-gray dark:bg-dark-blue rounded-sm w-24 h-8 shadow-sm shadow-black"
                             key={border}>

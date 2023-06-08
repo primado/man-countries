@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { IoSunnySharp, IoMoonOutline } from "react-icons/io5";
+import { Link, Router, Routes, Route } from "react-router-dom";
+import App from "../App";
 
 
 export default function Navbar() {
@@ -43,7 +45,10 @@ export default function Navbar() {
             <div className="container flex justify-between items-center px-20 h-16 sm-425:px-10 sm-320:px-5">
 
                 <div className="nav-left">
-                    <h1 className="font-bold text-2xl sm-425:text-lg sm-470:text-xl dark:text-white sm-320:text-base">Where in the world?</h1>
+                    <h1 className="font-bold text-2xl sm-425:text-lg sm-470:text-xl dark:text-white sm-320:text-base">
+                        <Link to="/">Where in the world?</Link>  
+                       
+                    </h1>
                 </div>
 
                 <div className="theme font-medium">
