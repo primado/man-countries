@@ -37,8 +37,9 @@ export default function Navbar() {
     }
 
     return (
+        // dark:bg-[#2b3743]
 
-        <div className="navbar bg-white shadow-md dark:bg-[#2b3743] ">
+        <div className="navbar bg-white shadow-md dark:bg-dark-blue ">
             <div className="container flex justify-between items-center px-20 h-16 sm-425:px-10 sm-320:px-5">
 
                 <div className="nav-left">
