@@ -37,7 +37,7 @@ function App() {
 
 
   const { data, error } = useSWR(
-    `https://restcountries.com/v2/all?fields=name,population,region,capital,flags`,
+    `https://restcountries.com/v2/all?fields=name,population,region,capital,flags,alpha2Code`,
     fetcher
   );
 
@@ -58,7 +58,7 @@ const searchedCountries =
 
 
   return (
-    <div className="App font-nunito dark:bg-[#202d36] dark:min-h-screen text-[14px] sm-320:w-screen sm-360:w-full sm-470:w-full">
+    <div className="App font-nunito dark:bg-very-dark-blue dark:min-h-screen text-[14px] sm-320:w-screen sm-360:w-full sm-470:w-full">
       <div>
         <Navbar />
      
@@ -72,7 +72,7 @@ const searchedCountries =
                   <IoSearchOutline className="text-gray-700 text-xl font-bold dark:text-gray-300" />
                 </div>
                 <input 
-                  className="w-full h-12 px-16 rounded-lg dark:bg-[#202d36] dark:text-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent sm-425:w-56 sm-375:w-60 sm-470:w-56"
+                  className="w-full h-12 px-16 rounded-lg dark:bg-dark-blue dark:text-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent sm-425:w-56 sm-375:w-60 sm-470:w-56"
                   type="text" 
                   placeholder="Search for a country..." 
                   value={searchTerm}
@@ -86,7 +86,7 @@ const searchedCountries =
             <div className="right-16 w-52 sm-375:w-60 ">
               <Listbox value={region} onChange={setRegion}>
                 <div className='relative mt-1'>
-                  <Listbox.Button className='relative w-full mb-1 flex items-center bg-white dark:bg-[#202d36] dark:text-white dark:border-none shadow-lg cursor-default rounded-lg py-2 pl-5 h-12 text-left border-2 border-gray-100 focus:outline-none focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2'>
+                  <Listbox.Button className='relative w-full mb-1 flex items-center bg-white dark:bg-dark-blue dark:text-white dark:border-none shadow-lg cursor-default rounded-lg py-2 pl-5 h-12 text-left border-2 border-gray-100 focus:outline-none focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2'>
                     <span className='block truncate dark:text-gray-300'>
                       {region.name}
                     </span>
@@ -101,7 +101,7 @@ const searchedCountries =
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <Listbox.Options className='absolute shadow-md bg-white dark:bg-[#202d36]'>
+                    <Listbox.Options className='absolute shadow-md bg-white dark:bg-dark-blue'>
                       {regions.map((region) => (
                         <Listbox.Option
                           key={region.name}
@@ -156,14 +156,14 @@ const searchedCountries =
           <div className="container">
             <div className="grid grid-cols-4 gap-x-28 gap-y-16 px-12 mt-12 xl-1024:grid xl-1024:grid-cols-3 xl-1024:gap-x-16 2md:grid 2md:grid-cols-2 sm-425:grid sm-425:grid-cols-1 sm-425:gap-x-0 sm-320:px-3 sm-375:px-2 sm-470:grid sm-470:grid-cols-1 sm-470:gap-x-0 md-943:grid md-943:grid-cols-2 md-950:grid md-950:grid-cols-2 xl-1080:grid xl-1080:xl-1024:grid-cols-3 xl-1080:gap-x-16">
               {searchedCountries.map((country) => (
-              <Link to={`/country/${country.alpha3Code}`}>
+              <Link to={`/country/${country.alpha2Code}`}>
                 <div key={country.name.common} className="w-72 dark:text-gray-400">
                   <img 
                     src={country.flags.svg} 
                     alt={country.name.common} 
                     className="w-ful object-cover rounded-t-lg"
                   />
-                  <div className="description bg-white dark:bg-[#202d36] shadow-lg p-8 ">
+                  <div className="description bg-white dark:bg-dark-blue shadow-lg p-8 ">
                     <h1 className="font-bold text-xl dark:text-white pb-5">
                       {country.name}
                     </h1>
