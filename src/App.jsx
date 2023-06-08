@@ -25,9 +25,6 @@ const regions = [
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-// const API_URL = 'https://restdata.com/v3.1/all';
-// const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
-
 
 function App() {
   
@@ -58,7 +55,7 @@ const searchedCountries =
 
 
   return (
-    <div className="App font-nunito dark:bg-very-dark-blue dark:min-h-screen text-[14px] sm-320:w-screen sm-360:w-full sm-470:w-full">
+    <div className="App font-nunito dark:bg-very-dark-blue dark:min-h-screen text-[14px] sm-320:w-screen sm-360:w-full sm-470:w-full sm-425:flex sm-425:items-center">
       <div>
         <Navbar />
      
@@ -189,10 +186,6 @@ const searchedCountries =
         </div>
 
       </div>
-
-      
-
-      
     </div>
   )
 }
