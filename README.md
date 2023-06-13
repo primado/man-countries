@@ -38,13 +38,18 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-| Light Mode | Dark Mode |
+| **Light Mode** | **Dark Mode** |
 | ---------- | --------- |
 | ![](./src/design/screenshot/man-countries-003.png) | ![](./src/design/screenshot/man-countries-004.png )|
 | ![](./src/design/screenshot/man-countries-002.png) | ![](./src/design/screenshot/man-countries-004.png )|
 | ![]() | ![](./src/design/screenshot/man-countries-007.png )|
-| Light Mobile View | Dark Mobile View | 
-| ![](./src/design/screenshot/man-countries-006.png) | ![](./src/design/screenshot/man-countries-005.png )|
+| ![](./src/design/screenshot/man-countries-d3.png) | ![](./src/design/screenshot/man-countries-d2.png )|
+
+| **Light Mobile View** | **Dark Mobile View** |
+| --------------------- | -------------------- |
+| ![](./src/design/screenshot/man-countries-006.png) | ![](./src/design/screenshot/man-countries-005.png) |
+| ![](./src/design/screenshot/man-countries-d4.png) | ![](./src/design/screenshot/man-countries-d1.png) |
+
 
 
 ### Links
