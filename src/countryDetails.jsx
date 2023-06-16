@@ -210,7 +210,9 @@ export default function CountryDetails() {
                       </ul>
                     </div>
                   ) : (
-                    <p>Border Countries: N/A</p>
+                    <p className="text-dark-blue flex gap-6 font-medium text-base dark:text-white-mode">Border Countries: 
+                      <span className="flex flex-row items-center justify-center font-normal dark:text-dark-gray dark:bg-dark-blue rounded-sm w-24 h-8 shadow-sm shadow-black">N/A</span>
+                    </p>
                   )}
                 </div>
               </div>

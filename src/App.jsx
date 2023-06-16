@@ -55,21 +55,21 @@ const searchedCountries =
 
 
   return (
-    <div className="App font-nunito dark:bg-very-dark-blue dark:min-h-screen text-[14px] sm-320:w-screen sm-360:w-full sm-470:w-full sm-425:flex sm-425:items-center">
+    <div className="App font-nunito w-full dark:bg-very-dark-blue">
       <div>
-        <Navbar />
+        <Navbar className="w-full"/>
      
         
         <div className="mt-12">
-          <form action="#" className='flex justify-between px-20 sm-425:px-5 sm-375:flex sm-375:flex-col sm-375:gap-y-5 sm-470:flex sm-470:justify-between sm-470:px-5'>
-            <div className="form__group w-96">
+          <form action="#" className='flex justify-between items-center px-32 2md:px-16  sm-425:w-full sm-425:flex sm-425:px-4 sm-425:justify-between gap-10 sm-375:flex sm-375:flex-col sm-375:gap-5'>
+            <div className="form__group w-96 sm-375:w-60">
               
               <div className="relative">  
                 <div className="absolute top-0 left-0 mt-3 ml-5">
                   <IoSearchOutline className="text-gray-700 text-xl font-bold dark:text-gray-300" />
                 </div>
                 <input 
-                  className="w-full h-12 px-16 rounded-lg dark:bg-dark-blue dark:text-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent sm-425:w-56 sm-375:w-60 sm-470:w-56"
+                  className="w-full h-12 px-16 rounded-lg  dark:bg-dark-blue dark:text-gray-300 shadow-md shadow-black dark:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   type="text" 
                   placeholder="Search for a country..." 
                   value={searchTerm}
@@ -80,10 +80,10 @@ const searchedCountries =
               </div>
               
             </div>
-            <div className="right-16 w-52 sm-375:w-60 ">
+            <div className="right-16 w-60 sm-375:w-60 ">
               <Listbox value={region} onChange={setRegion}>
                 <div className='relative mt-1'>
-                  <Listbox.Button className='relative w-full mb-1 flex items-center bg-white dark:bg-dark-blue dark:text-white dark:border-none shadow-lg cursor-default rounded-lg py-2 pl-5 h-12 text-left border-2 border-gray-100 focus:outline-none focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2'>
+                  <Listbox.Button className='relative w-full mb-1 flex items-center bg-white dark:bg-dark-blue dark:text-white dark:border-none shadow-md shadow-black dark:shadow-sm cursor-default rounded-lg py-2 pl-5 h-12 text-left border-2 border-gray-100 focus:outline-none focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2'>
                     <span className='block truncate dark:text-gray-300'>
                       {region.name}
                     </span>
@@ -148,33 +148,34 @@ const searchedCountries =
           component={<ScrollToTopBtn/>}
           width='50'
         />
-        <div className="countries pb-16">
+        <div className="countries w-full flex justify-center items-center pb-12 mt-12">
 
-          <div className="container">
-            <div className="grid grid-cols-4 gap-x-28 gap-y-16 px-12 mt-12 xl-1024:grid xl-1024:grid-cols-3 xl-1024:gap-x-16 2md:grid 2md:grid-cols-2 sm-425:grid sm-425:grid-cols-1 sm-425:gap-x-0 sm-320:px-3 sm-375:px-2 sm-470:grid sm-470:grid-cols-1 sm-470:gap-x-0 md-943:grid md-943:grid-cols-2 md-950:grid md-950:grid-cols-2 xl-1080:grid xl-1080:xl-1024:grid-cols-3 xl-1080:gap-x-16">
+          <div className="container px-8">
+            <div className="grid grid-cols-4 justify-center gap-8 xl-1024:grid xl-1024:grid-cols-3 2md:grid 2md:grid-cols-2 md-910:grid md-910:grid-cols-2 sm-425:flex sm-425:flex-col sm-425:justify-center sm-425:items-center sm-425:gap-12">
               {searchedCountries.map((country) => (
               <Link to={`/country/${country.alpha2Code}`}>
-                <div key={country.name.common} className="w-72 dark:text-gray-400">
+                <div key={country.name.common} className="max-w-[18rem] sm-425:max-w-[20rem] sm-375:max-w-[17.9rem] shadow-2xl">
                   <img 
                     src={country.flags.svg} 
                     alt={country.name.common} 
-                    className="w-ful object-cover rounded-t-lg"
+                    className="w-full object-cover rounded-t-lg"
                   />
-                  <div className="description bg-white dark:bg-dark-blue shadow-lg p-8 ">
-                    <h1 className="font-bold text-xl dark:text-white pb-5">
+                  <div className="description p-8 rounded-b-lg dark:bg-dark-blue ">
+                    <h1 className="dark:text-white-mode text-xl font-bold mb-3">
                       {country.name}
                     </h1>
                     <p> 
-                      <span className='font-semibold pr-3 dark:text-white'>Population:</span> 
-                        {country.population.toLocaleString()}
+                      <span className='font-medium pr-3 dark:text-very-light-gray'>Population:</span> 
+                        <span className='dark:text-dark-gray'>{country.population.toLocaleString()}</span>
+                        
                       </p>
                     <p>
-                      <span className='font-semibold pr-3 dark:text-white'>Region:</span> 
-                        {country.region}
+                      <span className='font-medium pr-3 dark:text-very-light-gray '>Region:</span> 
+                        <span className='dark:text-dark-gray'>{country.region}</span> 
                       </p>
                     <p>
-                      <span className='font-semibold pr-3 dark:text-white'>Capital:</span> 
-                      {country.capital}
+                      <span className='font-medium pr-3 dark:text-white'>Capital:</span> 
+                      <span className='dark:text-dark-gray'>{country.capital}</span> 
                     </p>
                   </div>
                 </div>
