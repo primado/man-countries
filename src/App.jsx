@@ -148,19 +148,19 @@ const searchedCountries =
           component={<ScrollToTopBtn/>}
           width='50'
         />
-        <div className="countries pb-16 mt-12">
+        <div className="countries w-full flex justify-center items-center pb-12 mt-12">
 
-          <div className="container ">
-            <div className="  sm-425:flex sm-425:flex-col sm-425:justify-center sm-425:items-center sm-425:gap-12">
+          <div className="container px-8">
+            <div className="grid grid-cols-4 justify-center gap-8 xl-1024:grid xl-1024:grid-cols-3 2md:grid 2md:grid-cols-2 md-910:grid md-910:grid-cols-2 sm-425:flex sm-425:flex-col sm-425:justify-center sm-425:items-center sm-425:gap-12">
               {searchedCountries.map((country) => (
               <Link to={`/country/${country.alpha2Code}`}>
-                <div key={country.name.common} className="sm-425:max-w-[20rem] sm-375:max-w-[17.9rem]">
+                <div key={country.name.common} className="max-w-[18rem] sm-425:max-w-[20rem] sm-375:max-w-[17.9rem] shadow-2xl">
                   <img 
                     src={country.flags.svg} 
                     alt={country.name.common} 
                     className="w-full object-cover rounded-t-lg"
                   />
-                  <div className="description p-8 dark:bg-dark-blue rounded-b-lg">
+                  <div className="description p-8 rounded-b-lg dark:bg-dark-blue ">
                     <h1 className="dark:text-white-mode text-xl font-bold mb-3">
                       {country.name}
                     </h1>
