@@ -55,7 +55,7 @@ const searchedCountries =
 
 
   return (
-    <div className="App font-nunito w-full dark:bg-very-dark-blue">
+    <div className="App font-nunito w-full min-h-screen dark:bg-very-dark-blue">
       <div>
         <Navbar className="w-full"/>
      
