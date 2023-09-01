@@ -61,7 +61,7 @@ const searchedCountries =
      
         
         <div className="mt-12">
-          <form action="#" className='flex justify-between items-center px-32 2md:px-16  sm-425:w-full sm-425:flex sm-425:px-4 sm-425:justify-between gap-10 sm-375:flex sm-375:flex-col sm-375:gap-5'>
+          <form action="#" className='flex justify-between items-center px-32 2md:px-16  sm-425:w-full sm-425:flex-col sm-425:px-4 sm-425:justify-between gap-10 sm-375:flex sm-375:flex-col sm-375:gap-5'>
             <div className="form__group w-96 sm-375:w-60">
               
               <div className="relative">  
