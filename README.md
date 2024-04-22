@@ -1,4 +1,4 @@
-# AmaliTech NSS Program Challenge - REST Country API with color theme switcher
+# REST Country API with color theme switcher
 
 
 ## Table of contents
